@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicea-deployment
+  labels:
+    app: servicea
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: servicea
+  template:
+    metadata:
+      labels:
+        app: servicea
+    spec:
+      containers:
+      - name: servicea
+        image: docker.io/gialnet/servicea:alpine
+        ports:
+        - containerPort: 8080
