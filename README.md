@@ -27,3 +27,6 @@ kubectl -n istio-system get svc grafana
 
 # Open the Istio Dashboard via the Grafana UI.
 kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}') 3000:3000 &
+
+# Open the Istio Dashboard via the Prometheus
+kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=prometheus -o jsonpath='{.items[0].metadata.name}') 9090:9090 &
