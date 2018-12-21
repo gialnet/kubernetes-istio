@@ -5,19 +5,19 @@ Install and configure Itsio for Kubernetes Linux CentOS 7
 
 curl -L https://git.io/getLatestIstio | sh -
 
-cd istio-1.0.4
+cd istio-1.0.5
 
 1)
 kubectl apply -f install/kubernetes/helm/istio/charts/certmanager/templates/crds.yaml
 
 2)
-helm template install/kubernetes/helm/istio --name istio --namespace istio-system > $HOME/istio.yaml --set grafana.enabled=true
+helm template install/kubernetes/helm/istio --name istio --namespace istio-system > $HOME/istio-1.0.5/istio.yaml --set grafana.enabled=true
 
 3)
 kubectl create namespace istio-system
 
 4)
-kubectl apply -f $HOME/istio.yaml
+kubectl apply -f $HOME/istio-1.0.5/istio.yaml
 
 wait for a few minutes
 
