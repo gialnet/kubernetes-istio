@@ -1,6 +1,8 @@
 
 minikube start --vm-driver=kvm2
 
+minikube config set memory 12288
+
 minikube start --vm-driver=kvm2 --cpus 8 --memory 12288
 
 kubectl config get-contexts
