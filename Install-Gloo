@@ -1,0 +1,4 @@
+
+sudo curl -sL https://run.solo.io/gloo/install | sh
+
+helm install gloo/gloo --name 0.10.0 --namespace gloo-namespace
